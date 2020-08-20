@@ -3,104 +3,143 @@
   border: 0;
 }
 
-
-.entrycontainer{
-     perspective: 1000px; 
-     height: 50vh;
-     width: 100%;
-     cursor: pointer;
-     margin-bottom: 3vh;
-    
-     border-radius: 7px;
+.entrycontainer {
+  perspective: 1000px;
+  height: 60vh;
+  width: 100%;
+  cursor: pointer;
+  margin-bottom: 3vh;
+  margin: 2em auto 5em auto;
+  border-radius: 7px;
 }
 
 .entry {
-    margin-bottom: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 7px;   
-    position: relative;
-    transition: all 0.5s linear; 
-    transform-style: preserve-3d;
-    transform: rotateY(0deg);
-  }
+  margin-bottom: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 7px;
+  position: relative;
+  transition: all 0.5s linear;
+  transform-style: preserve-3d;
+  transform: rotateY(0deg);
+}
 
-  .rotatright {
-    margin-bottom: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 7px;   
-    position: relative;
-    transition: all 0.5s linear; 
-    transform-style: preserve-3d;
-    transform: rotateY(120deg);
-    
-  }
+.rotatright {
+  margin-bottom: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 7px;
+  position: relative;
+  transition: all 0.5s linear;
+  transform-style: preserve-3d;
+  transform: rotateY(120deg);
+}
 
-  .rotatleft {
-    margin-bottom: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 7px;   
-    position: relative;
-    transition: all 0.5s linear; 
-    transform-style: preserve-3d;
-    transform: rotateY(240deg);
-    
-  }
+.rotatleft {
+  margin-bottom: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 7px;
+  position: relative;
+  transition: all 0.5s linear;
+  transform-style: preserve-3d;
+  transform: rotateY(240deg);
+}
 
-  .left, .front, .right{
-      top: 00px;
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      backface-visibility: hidden;
-      -webkit-backface-visibility: hidden;
-      display: block;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      background-color: rgb(224, 224, 244, 0.5);
-      border: 1px solid #888888;
-      
-  }
- 
+.left,
+.front,
+.right {
+  top: 0px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  display: block;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow:
+  0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+  0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+  0 12.5px 10px rgba(0, 0, 0, 0.06),
+  0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+  0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+  0 100px 80px rgba(0, 0, 0, 0.12);
+  border-radius: 3%;
+}
 
-  .left{
-    transform: rotateY(120deg);
-  }
 
-  .right{
-    transform: rotateY(240deg);
-  }
+.left > *,
+.front > *,
+.right > * {
+  border-radius: 3%;
+  padding: 0.2em 0em;
+}
 
- .description {
-    text-align: justify;
-    height: 100%;
-    width: 100%;
-  }
+.left {
+  transform: rotateY(120deg);
+}
 
-  .iframe{
-    width: 100%;
-    height: 80%;
-    padding-top: 3%;
+.right {
+  transform: rotateY(240deg);
+}
+
+.description {
+  text-align: justify;
+  height: 90%;
+  max-height: 90%;
+  width: 90%;
+  margin: 2em auto;
+  overflow: hidden;
+
+}
+
+
+.iframe {
+  width: 100%;
+  height: 80%;
+  padding-top: 3%;
+}
+
+@media screen and (max-width: 760px) {
+  .entry {
+    width: 90%;
+    margin: 0 auto;
   }
-  
-  @media screen and (max-width: 760px) {
-    .entry {
-      width: 90%;
-      margin: 0 auto ;
-    }
+  .iframe {
+    width:90%;
+    margin: 0 auto;
   }
-  
-  /*.entry ul {
+  .description {
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+}
+
+/*.entry ul {
     align-self: center;
     justify-self: center;
   }*/
 
-  .front img {
-    width: 100%;
-    height: 90%;
+.front img {
+  width: 100%;
+  height: 90%;
+}
+@media screen and (max-width: 1260px) {
+  .description {
+    overflow-y: scroll;
+    overflow-x: hidden;
   }
+}
 
- 
+@media screen and (max-width: 760px) and (min-width: 500px) {
+  .entry {
+    width: 60%;
+  }
+}
+@media screen and (max-width: 950px) and (min-width: 761px) {
+  .entry {
+    width: 100%;
+  }
+}

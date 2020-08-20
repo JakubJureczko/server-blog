@@ -1,43 +1,39 @@
-import React, {useContext, useState, useEffect} from "react";
-import Styles from "./Filter.module.css"
-import marked from "marked"
+import React, { useContext, useState, useEffect } from "react";
+import Styles from "./Filter.module.css";
+import marked from "marked";
 import { StateContext } from "../statecontext/stateContext";
 
-
-
-function Filter(){
+function Filter() {
   const { entries, setFilteredEntries } = useContext(StateContext);
- 
+
   const [search, setSearch] = useState("");
-  
-  
 
-useEffect(()=>{
-  
-    
-setFilteredEntries(
-  entries.filter(entry =>{return entry.fields.title.toLowerCase().includes(search.toLowerCase())})  
-  )
+  useEffect(() => {
+    setFilteredEntries(
+      entries.filter((entry) => {
+        return entry.fields.title.toLowerCase().includes(search.toLowerCase());
+      })
+    );
+  }, [search]);
 
-
-  },[search])
- 
-  if(search===""){
-    setFilteredEntries(entries)
+  if (search === "") {
+    setFilteredEntries(entries);
   }
-
+  
 
   //if (loading) {
-    //return <p>Loading countries....</p>;
- // }
+  //return <p>Loading countries....</p>;
+  // }
 
-return(
-         <input
-            type="text"
-            placeholder="Search"
-            onChange={(e) => setSearch(e.target.value)}
-           />)
-
+  return (
+    <div className={Styles.searchbar}>
+      <input
+        type="text"
+        placeholder="Search..."
+        onChange={(e) => setSearch(e.target.value)}
+      />
+    </div>
+  );
 }
 
 export default Filter;

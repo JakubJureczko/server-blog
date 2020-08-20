@@ -14,21 +14,17 @@ function App() {
   return (
     <div className="App">
       <div className="container">
-        <Header />
         <Filter />
         <div className="mainwrapper">
         <BlogCard />
         </div>
         <div className="phone">
-         <div className="ar"><Arrow /></div> 
-          <div className="so"><SocialMedia /></div>
+         <div className="ar2"><Arrow /></div> 
+          <div className="so2"><SocialMedia /></div>
         </div>
 
       </div>
-      <div className="phone">
-        <div className="ar"><Arrow /></div> 
-        <div className="so"><SocialMedia /></div>
-      </div>
+     
       <div className="secondContainer">
         <h1>MUSIC BLOG</h1>
         <p>
