@@ -77,6 +77,8 @@
 
 .arrowcont {
   position: fixed;
+  display: flex;
+  flex-direction: column;
   bottom: 15%;
   color: rgba(222, 222, 214, 0.9);
 }
@@ -144,7 +146,7 @@
 }
 @media screen and (max-width: 900px) and (min-width: 761px) {
   .arrowcont {
-    top: 82%;
+    top: 75%;
     color: rgba(222, 222, 214, 0.9);
   }
   .socialMedia {
