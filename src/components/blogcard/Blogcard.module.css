@@ -78,7 +78,16 @@
   padding: 0.2em 0em;
  
 }
-
+.front {
+  display: flex; 
+}
+.front img {
+  width: 90%;
+  height: 80%;
+}
+.front h1 {
+  width: 90%;
+}
 
 .left {
   transform: rotateY(120deg);
@@ -104,6 +113,7 @@
   height: 80%;
   padding-top: 3%;
   margin: 0 auto;
+  
 }
 
 @media screen and (max-width: 760px) {
@@ -126,10 +136,7 @@
     justify-self: center;
   }*/
 
-.front img {
-  width: 100%;
-  height: 90%;
-}
+
 @media screen and (max-width: 1260px) {
   .description {
     overflow-y: scroll;
@@ -138,9 +145,7 @@
 }
 
 @media screen and (max-width: 760px) and (min-width: 500px) {
-  .entry {
-    width: 60%;
-  }
+  
 }
 @media screen and (max-width: 950px) and (min-width: 761px) {
   .entry {
