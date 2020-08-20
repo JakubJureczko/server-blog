@@ -24,6 +24,7 @@
   transform: rotateY(0deg);
 }
 
+
 .rotatright {
   margin-bottom: 0;
   width: 100%;
@@ -75,7 +76,9 @@
 .right > * {
   border-radius: 3%;
   padding: 0.2em 0em;
+ 
 }
+
 
 .left {
   transform: rotateY(120deg);
@@ -97,9 +100,10 @@
 
 
 .iframe {
-  width: 100%;
+  width: 90%;
   height: 80%;
   padding-top: 3%;
+  margin: 0 auto;
 }
 
 @media screen and (max-width: 760px) {
