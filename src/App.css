@@ -14,6 +14,10 @@
   width: 100%;
   font-family: Helvetica;
 }
+.mainwrapper {
+  min-height: 100vh;
+  
+}
 
 .entry .image {
   border-radius: 2%;
