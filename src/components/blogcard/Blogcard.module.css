@@ -78,6 +78,10 @@
 .front img {
   width: 85%;
   height: 85%;
+  -webkit-box-shadow: 0 6px 6px -6px rgb(135, 137, 136);
+  -moz-box-shadow: 0 6px 6px -6px rgb(135, 137, 136);
+       box-shadow: 0 6px 6px -6px rgb(135, 137, 136);
+  
 }
 .front h1 {
   width: 80%;
