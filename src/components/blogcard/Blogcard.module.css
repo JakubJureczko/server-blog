@@ -58,7 +58,7 @@
   -webkit-backface-visibility: hidden;
   display: block;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   box-shadow:
   0 2.8px 2.2px rgba(0, 0, 0, 0.034),
@@ -82,13 +82,13 @@
   display: flex; 
 }
 .front img {
-  width: 80%;
-  height: 80%;
-  box-shadow:
-  
+  width: 85%;
+  height: 85%;
 }
 .front h1 {
   width: 80%;
+  font-size: x-large;
+  margin-top: 0.1em;
 }
 
 .left {
