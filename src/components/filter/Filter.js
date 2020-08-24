@@ -1,6 +1,5 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useContext, useState, useEffect} from "react";
 import Styles from "./Filter.module.css";
-import marked from "marked";
 import { StateContext } from "../statecontext/stateContext";
 
 function Filter() {
@@ -9,21 +8,20 @@ function Filter() {
   const [search, setSearch] = useState("");
 
   useEffect(() => {
+    
+    if(entries.length!==0){
     setFilteredEntries(
       entries.filter((entry) => {
         return entry.fields.title.toLowerCase().includes(search.toLowerCase());
       })
-    );
-  }, [search]);
+    );}
+ }, [search, entries]);
 
   if (search === "") {
-    setFilteredEntries(entries);
+    if(entries.length!==0){
+    setFilteredEntries(entries)};
   }
   
-
-  //if (loading) {
-  //return <p>Loading countries....</p>;
-  // }
 
   return (
     <div className={Styles.searchbar}>
