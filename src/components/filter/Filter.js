@@ -10,17 +10,17 @@ function Filter() {
   useEffect(() => {
     
     if(entries.length!==0){
+    if (search === "") {
+    setFilteredEntries(entries)}
+      else{
     setFilteredEntries(
       entries.filter((entry) => {
         return entry.fields.title.toLowerCase().includes(search.toLowerCase());
       })
-    );}
+    );}}
  }, [search, entries]);
 
-  if (search === "") {
-    if(entries.length!==0){
-    setFilteredEntries(entries)};
-  }
+  
   
 
   return (

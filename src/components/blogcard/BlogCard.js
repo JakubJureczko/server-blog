@@ -37,13 +37,13 @@ function BlogCard(){
                
                
                 const train = filteredEntries[index].sys.id
-                console.log(filteredEntries[index].sys.id)
+                
                 YouTubePlayer(`${train}`).stopVideo().then(()=>{
                 
                 })}
                 
                 return 0}
-            //}
+            
 
             return rot
 
@@ -71,8 +71,8 @@ return(
             filteredEntries.map((entry, id) => (
                             
                             
-                <div className={Styles.entrycontainer}>
-                    <div onClick={()=>Rotatenow(id)} className={Styles.entry} id={id} key={entry.sys.id}>
+                <div className={Styles.entrycontainer} key={entry.sys.id}>
+                    <div onClick={()=>Rotatenow(id)} className={Styles.entry} id={id} >
                         <div className={Styles.front}>
                             <h1 >{entry.fields.title}</h1>
                             <img src={entry.fields.image.fields.file.url} alt="" /> 
