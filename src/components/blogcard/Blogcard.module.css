@@ -159,6 +159,9 @@
     overflow-y: scroll;
     overflow-x: hidden;
   }
+ .entrycontainer {
+   height: 50vh;
+ }
 }
 
 @media screen and (max-width: 760px) and (min-width: 500px) {
