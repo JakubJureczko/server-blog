@@ -6,26 +6,32 @@ import YouTubePlayer from 'youtube-player';
 
 function BlogCard(){
     const [rotpost, setRotPost] = useState([])
-    const {filteredEntries}=useContext(StateContext);
+    const [tenEntries, setTenentries]=useState([])
+    const {filteredEntries, count}=useContext(StateContext);
     const vid = useRef(null);
-   
-
+    
     
     useEffect(()=>{
+    const goat = filteredEntries.slice(((count-1)*10), ((count-1)*10+10))
     const newRots = filteredEntries.map(() => 0)
     setRotPost(newRots)
-     
-    }, [filteredEntries])
+    setTenentries(goat)
+    console.log(goat)
+    }, [filteredEntries, count])
 
     
       function Rotatenow(idi){
         const fish=document.getElementById(idi).classList
+        const train = tenEntries[idi].sys.id
 
         const newRotPost = rotpost.map((rot, index) => {
             if (index === idi ) {
                 if(rot===0){return 1}
                 else if(rot===1){return 2}
-                else {return 0}
+                else {
+                    YouTubePlayer(`${train}`).pauseVideo()
+                    
+                    return 0}
             } 
             
             if (index!==idi){
@@ -36,7 +42,7 @@ function BlogCard(){
                 dog.add(Styles.entry)
                
                
-                const train = filteredEntries[index].sys.id
+                const train = tenEntries[index].sys.id
                 
                 YouTubePlayer(`${train}`).stopVideo().then(()=>{
                 
@@ -68,7 +74,7 @@ function BlogCard(){
 return(
     <div >
         {  filteredEntries!==0?
-            filteredEntries.map((entry, id) => (
+            tenEntries.map((entry, id) => (
                             
                             
                 <div className={Styles.entrycontainer} key={entry.sys.id}>
