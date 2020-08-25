@@ -8,7 +8,8 @@ export default function StateContextProvider({ children }) {
 
     const [entries, setEntries] = useState([]);
     const [filteredEntries ,setFilteredEntries]=useState([]);
-
+    const [side, setSide] = useState(1)
+    const [count, setCount] = useState(1);
   useEffect(() => {
       const client = Contentful.createClient({
         space: process.env.REACT_APP_SPACE_ID,
@@ -32,7 +33,7 @@ export default function StateContextProvider({ children }) {
 
     return (
         <StateContext.Provider
-          value={{entries, filteredEntries ,setFilteredEntries }}
+          value={{entries, filteredEntries ,setFilteredEntries, side, setSide, count, setCount }}
           >
             {children}
           </StateContext.Provider>
