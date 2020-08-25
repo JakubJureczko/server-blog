@@ -5,6 +5,10 @@
   height: cover;
   width: 100%;
   margin: 200% auto 0 auto;
+  -webkit-box-shadow: 0 6px 6px -6px rgb(135, 137, 136);
+  -moz-box-shadow: 0 6px 6px -6px rgb(135, 137, 136);
+       box-shadow: 0 6px 6px -6px rgb(135, 137, 136);
+  border-radius: 3%;
 }
 .blogsInner h2 {
   margin: 0 auto;
@@ -20,4 +24,5 @@
 
 .blogsInner li {
   padding: 1em;
+  
 }
