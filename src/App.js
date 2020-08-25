@@ -5,6 +5,7 @@ import BlogCard from "./components/blogcard/BlogCard";
 import Filter from "./components/filter/Filter";
 import Arrow from "./components/arrow/Arrow";
 import ScrollArrow from "./components/Scroll/Scroll";
+import Blogs from "./components/blogs/Blogs";
 
 function App() {
   return (
@@ -34,8 +35,11 @@ function App() {
         <p className="hidden">
           Don't hesitate to checkout our social media and YouTube channel.
         </p>
+        <div className="blogs">
+          <Blogs />
+        </div>
         <div className="arrowcont">
-        <ScrollArrow />
+          <ScrollArrow />
           <Arrow />
         </div>
         <div className="socialMedia">
