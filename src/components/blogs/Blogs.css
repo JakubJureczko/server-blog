@@ -5,6 +5,8 @@
   height: cover;
   width: 100%;
   margin: 200% auto 0 auto;
+  animation: fadeIn 0.3s;
+  transition: opacity 0.1s;
 }
 .blogsInner h2 {
   margin: 0 auto;
@@ -15,10 +17,12 @@
 .blogsInner a {
   text-decoration: none;
   color: black;
-  
 }
 
 .blogsInner li {
   padding: 1em;
-  
+  opacity: 0.58;
+}
+.blogsInner li:hover {
+  opacity: 1;
 }
