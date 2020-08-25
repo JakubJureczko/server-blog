@@ -19,7 +19,7 @@ const Blogs = () =>{
   window.addEventListener('scroll', checkScroll)
 
   return (
-        <div className="blogsInner"  style={{transition: "2s"},{display: showText ? 'flex' : 'none'}}>
+        <div className="blogsInner"  style={{display: showText ? 'flex' : 'none'}}>
           <h2>Other music blogs:</h2>
           <ul>
             <a href="https://rappamelo.com/" target="_blank"><li>RAPPAMELO</li></a>
