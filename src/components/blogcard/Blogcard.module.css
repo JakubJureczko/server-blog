@@ -81,8 +81,13 @@
   -webkit-box-shadow: 0 6px 6px -6px rgb(135, 137, 136);
   -moz-box-shadow: 0 6px 6px -6px rgb(135, 137, 136);
        box-shadow: 0 6px 6px -6px rgb(135, 137, 136);
-  
 }
+
+.front img:hover {
+  filter: contrast(1.4) saturate(1.8) sepia(.6);
+  -webkit-filter: contrast(1.4) saturate(1.8) sepia(.6);
+}
+
 .front h1 {
   width: 85%;
   font-size: x-large;
