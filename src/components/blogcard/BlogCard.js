@@ -8,6 +8,8 @@ function BlogCard(){
     const [rotpost, setRotPost] = useState([])
     const [tenEntries, setTenentries]=useState([])
     const {filteredEntries, count}=useContext(StateContext);
+    const [iFram, setIFram] = useState([])
+    const [h2info, setH2info] = useState([])
     const vid = useRef(null);
     
     
@@ -16,20 +18,25 @@ function BlogCard(){
     const newRots = filteredEntries.map(() => 0)
     setRotPost(newRots)
     setTenentries(goat)
-    console.log(goat)
     }, [filteredEntries, count])
 
     
       function Rotatenow(idi){
         const fish=document.getElementById(idi).classList
-        const train = tenEntries[idi].sys.id
+
+        const chick=tenEntries[idi].fields.yt.split("</h2>")
+        setH2info(chick[0].split("<h2>"))
+        const hen=tenEntries[idi].fields.yt.split("src=")
+        setIFram(hen[1].split(" frameborder")) 
 
         const newRotPost = rotpost.map((rot, index) => {
             if (index === idi ) {
-                if(rot===0){return 1}
+                if(rot===0){
+                    return 1}
                 else if(rot===1){return 2}
                 else {
-                    YouTubePlayer(`${train}`).pauseVideo()
+                   
+                    YouTubePlayer("vido").stopVideo()      
                     
                     return 0}
             } 
@@ -39,23 +46,16 @@ function BlogCard(){
                 const dog=document.getElementById(index).classList
                 dog.remove(Styles.rotatright)
                 dog.remove(Styles.rotatleft)
-                dog.add(Styles.entry)
-               
-               
-                const train = tenEntries[index].sys.id
-                
-                YouTubePlayer(`${train}`).stopVideo().then(()=>{
-                
-                })}
-                
+                dog.add(Styles.entry)        
                 return 0}
             
 
-            return rot
+            return rot}
 
            
 
         })
+
         setRotPost(newRotPost);
         if(rotpost[idi]===0){
             fish.remove(Styles.entry)
@@ -70,13 +70,11 @@ function BlogCard(){
         }
         
     }
-
+   
 return(
     <div >
-        {  filteredEntries!==0?
-            tenEntries.map((entry, id) => (
-                            
-                            
+        {  filteredEntries!==0?(
+            tenEntries.map((entry, id) => (         
                 <div className={Styles.entrycontainer} key={entry.sys.id}>
                     <div onClick={()=>Rotatenow(id)} className={Styles.entry} id={id} >
                         <div className={Styles.front}>
@@ -90,16 +88,15 @@ return(
                         />  
                         </div>  
                         <div className={Styles.left}>
-                            <section
-                            className={Styles.iframe}
-                            dangerouslySetInnerHTML={{ __html: marked(entry.fields.yt)}}  
-                        />  
+                            <div className={Styles.iframe}>
+                            <h2>{h2info}</h2>
+                        <iframe id = "vido" ref={vid} width = '100%' height='100%' src={eval(iFram[0])}></iframe></div>  
                         </div>             
                     </div>
                 </div>
 
 
-            )):console.log("hello")
+            ))):console.log("hello")
         }
 
     </div>
