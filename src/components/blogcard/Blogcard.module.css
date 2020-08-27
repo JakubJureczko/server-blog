@@ -187,7 +187,7 @@
   }
 }
 @media screen and (min-width: 1250px) {
-  .front img:hover {
+  .front:hover {
     filter: contrast(1.4) saturate(1.8) sepia(.6);
     -webkit-filter: contrast(1.4) saturate(1.8) sepia(.6);
   }
