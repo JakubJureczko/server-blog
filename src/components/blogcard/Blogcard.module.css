@@ -85,10 +85,6 @@
   box-shadow: 0 6px 6px -6px rgb(135, 137, 136);
  
 }
-.front  img:hover {
-  transform: scale(0.995);
-  
-}
 
 .front h1 {
   width: 85%;
