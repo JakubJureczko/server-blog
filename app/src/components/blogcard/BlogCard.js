@@ -22,10 +22,10 @@ function BlogCard() {
   function Rotatenow(idi) {
     const fish = document.getElementById(idi).classList;
 
-    const chick = tenEntries[idi].fields.yt.split("</h2>");
-    setH2info(chick[0].split("<h2>"));
-    const hen = tenEntries[idi].fields.yt.split("src=");
-    setIFram(hen[1].split(" frameborder"));
+    //const chick = tenEntries[idi].yt;
+    //setH2info(chick[0].split("<h2>"));
+    //const hen = tenEntries[idi].fields.yt.split("src=");
+    //setIFram(hen[1].split(" frameborder"));
 
     const newRotPost = rotpost.map((rot, index) => {
       if (index === idi) {
@@ -34,7 +34,7 @@ function BlogCard() {
         } else if (rot === 1) {
           return 2;
         } else {
-          YouTubePlayer("vido").stopVideo();
+          //YouTubePlayer("vido").stopVideo();
 
           return 0;
         }
@@ -66,39 +66,47 @@ function BlogCard() {
     }
   }
 
+  /*<iframe
+                      id="vido"
+                      ref={vid}
+                      width="100%"
+                      height="100%"
+                      src={eval(iFram[0])}
+                    ></iframe>*/
+
+
+
   return (
     <div>
       {filteredEntries !== 0
         ? tenEntries.map((entry, id) => (
-            <div className={Styles.entrycontainer} key={entry.sys.id}>
+            <div className={Styles.entrycontainer} key={entry.id}>
               <div
                 onClick={() => Rotatenow(id)}
                 className={Styles.entry}
                 id={id}
               >
                 <div className={Styles.front}>
-                  <h1>{entry.fields.title}</h1>
-                  <img src={entry.fields.image.fields.file.url} alt="" />
+                  <h1>{entry.title}</h1>
+                  <img src={entry.image} alt="" />
                 </div>
                 <div className={Styles.right}>
                   <section
                     className={Styles.description}
                     dangerouslySetInnerHTML={{
-                      __html: marked(entry.fields.description),
+                      __html: marked(entry.description),
                     }}
                   />
                 </div>
                 <div className={Styles.left}>
-                  <div className={Styles.iframe}>
-                    <h2>{h2info}</h2>
-                    <iframe
-                      id="vido"
-                      ref={vid}
-                      width="100%"
-                      height="100%"
-                      src={eval(iFram[0])}
-                    ></iframe>
-                  </div>
+                    <h2 className={Styles.header}>{entry.header}</h2>
+                    <section
+                    className={Styles.iframe}
+                    dangerouslySetInnerHTML={{
+                      __html: marked(entry.yt),
+                    }}
+                  />
+
                 </div>
               </div>
             </div>
