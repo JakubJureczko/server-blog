@@ -15,7 +15,7 @@ function Filter() {
       else{
     setFilteredEntries(
       entries.filter((entry) => {
-        return entry.fields.title.toLowerCase().includes(search.toLowerCase());
+        return entry.title.toLowerCase().includes(search.toLowerCase());
       })
     );}}
  }, [search, entries]);
